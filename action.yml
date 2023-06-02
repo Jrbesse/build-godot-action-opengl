@@ -21,8 +21,8 @@ inputs:
     description: 'Whether or not to use `--export-debug`'
     default: false
   legacyRender:
-    description: 'Make Godot attempt to render under Opengl3'
-    default: false
+    description: 'Additional arguments to run godot with'
+    default: ""
 runs:
   using: docker
   image: Dockerfile
@@ -33,7 +33,7 @@ runs:
     - ${{ inputs.package }}
     - ${{ inputs.projectDir }}
     - ${{ inputs.debugMode }}
-    - ${{ inputs.legacyRender }}
+    - ${{ inputs.anyArg }}
 branding:
   icon: loader
   color: blue
