@@ -16,7 +16,6 @@ then
     mode="export-debug"
 fi
 
-daArgs=""
 if [ "$7" != "" ]
 then
     echo "Custom additional arguments being used. ARGS: $7"
@@ -27,7 +26,7 @@ fi
 echo "Building $1 for $2"
 mkdir -p $GITHUB_WORKSPACE/build/${SubDirectoryLocation:-""}
 cd "$GITHUB_WORKSPACE/$5"
-godot --${mode} "$2" $GITHUB_WORKSPACE/build/${SubDirectoryLocation:-""}$1 ${daArgs}
+godot --${mode} "$2" $GITHUB_WORKSPACE/build/${SubDirectoryLocation:-""}$1 ${daArgs:-""}
 echo "Build Done"
 
 echo ::set-output name=build::build/${SubDirectoryLocation:-""}
