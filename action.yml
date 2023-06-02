@@ -20,7 +20,7 @@ inputs:
   debugMode:
     description: 'Whether or not to use `--export-debug`'
     default: false
-  legacyRender:
+  anyArg:
     description: 'Additional arguments to run godot with'
     default: ""
 runs:
